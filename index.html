@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>James Tauber &mdash; Open Source</title>
+    <title>Eldarion &mdash; Open Source</title>
     <link rel="stylesheet" type="text/css" href="assets/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/grid.css">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
@@ -58,7 +58,7 @@
         $item.appendTo("#repos");
       }
 
-      $.getJSON("https://api.github.com/users/jtauber/repos?callback=?", function (result) {
+      $.getJSON("https://api.github.com/orgs/eldarion/repos?callback=?", function (result) {
         var repos = result.data;
 
         $(function () {
@@ -103,18 +103,27 @@
           });
         });
       });
+      
+      $.getJSON("https://api.github.com/orgs/eldarion/members?callback=?", function (result) {
+        var members = result.data;
+        $(function () {
+          $("#num-members").text(members.length);
+        });
+      });
     })(jQuery);
     </script>
   </head>
   <body>
     <div id="wrapper" class="grid clearfix">
       <div id="main" class="grid-1">
-        <div id="logo"></div>
-        <h1>James Tauber</h1>
-        <h3>Journeyman of Some</h3>
-        <p><a href="http://jtauber.com/">http://jtauber.com/</a></p>
+        <div id="logo"><h1>Eldarion</h1></div>
+        <h3>Idea to Launch. Faster.</h3>
+        <p><a href="http://eldarion.com/">http://eldarion.com/</a></p>
         <p>
-          <a href="https://twitter.com/jtauber" class="twitter-follow-button">Follow @jtauber</a>
+          Eldarion is built on open source and, wherever possible, we open source components of our web sites and love working with clients that allow us to open source parts of our work for them.
+        </p>
+        <p>
+          <a href="https://twitter.com/eldarion" class="twitter-follow-button">Follow @eldarion</a>
           <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
         </p>
       </div>
@@ -123,13 +132,15 @@
         <div id="statistics" class="grid-1 alpha header">
           <h1>Statistics</h1>
           <p>
-            <a href="https://github.com/jtauber/repositories"><span id="num-repos">&nbsp;</span> public repos</a>
+            <a href="https://github.com/eldarion/repositories"><span id="num-repos">&nbsp;</span> public repos</a>
+            <br>
+            <a href="https://github.com/eldarion"><span id="num-members">&nbsp;</span> members</a>
           </p>
-          <p>This page generated with code from Twitter.</p>
+        <p style="font-size: 90%;">Generated with code from Twitter.</p>
         </div>
 
         <div id="recently-updated" class="grid-2 omega header">
-          <h1>Recently updated <a href="https://github.com/jtauber/repositories">View All on GitHub</a></h1>
+          <h1>Recently updated <a href="https://github.com/eldarion/repositories">View All on GitHub</a></h1>
           <ol id="recently-updated-repos"></ol>
         </div>
       </div>

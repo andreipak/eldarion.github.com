@@ -1,28 +1,28 @@
 html {
-  background: #F7F7F7;
+  background: #1B1C1E;
 }
 
 body {
   font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.4;
-  color: #666;
+  color: #444;
   min-width: 960px;
 }
 
 h1 {
   font-weight: bold;
   font-size: 20px;
-  color: #333;
+  color: #222;
 }
 
 h2 {
   font-weight: bold;
   font-size: 20px;
-  color: #0084b4;
+  color: #222;
 }
 
 a:link, a:visited {
-  color: #0084b4;
+  color: #222;
   text-decoration: none;
 }
 
@@ -43,29 +43,38 @@ a:hover {
 }
 
 #main, div.header, li.repo {
-  background: white;
-/*  background: rgba(255, 255, 255, 0.7);*/
   -moz-box-shadow:    0px 0px 5px 1px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
   box-shadow:         0px 0px 5px 1px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  background: rgb(238,238,238); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
+  background: linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
 }
 
 #main h1 {
   margin: 10px 15px 0;
 }
 
+#main h3 {
+  margin: 10px 0;
+}
+
 #main p {
   margin: 0 10px 15px 10px;
   font-size: 11px;
-  line-height: 2;
 }
 
 #logo {
-  width: 160px;
-  height: 120px;
+  width: 189px;
+  height: 154px;
   margin: 15px 0 0 15px;
-  background: url("james_tauber.jpg");
+  background: url(http://eldarion.com/site_media/static/images/eldarion_logo_medium.png) #1B1C1E;
   text-indent: -99999px;
 }
 
@@ -88,7 +97,7 @@ div.header h1 {
 #num-repos, #num-members {
   font-size: 14px;
   font-weight: bold;
-  color: #0084b4;
+  color: #444;
   line-height: 15px;
 }
 
@@ -131,7 +140,7 @@ div.header h1 {
 #recently-updated-repos li span.time a,
 #recently-updated-repos li span.watchers a,
 #recently-updated-repos li span.forks a {
-  color: #999;
+  color: #666;
 }
 
 li.repo {
@@ -165,26 +174,15 @@ li.repo h3 {
   font-size: 11px;
   margin-top: 2px;
   margin-bottom: 15px;
-  color: #999;
+  color: #666;
 }
 
-.repo:after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 50px solid transparent;
-  border-left: 50px solid transparent;
-  border-right: 50px solid #0080b0;
-  pointer-events: none;
+.repo {
+  border-top: 10px solid #0080B0;
 }
-
-.repo.javascript:after {
-  border-right-color: #333;
+.repo.javascript {
+  border-top: 10px solid #333;
 }
-
-.repo.python:after {
-  border-right-color: #6aad2d;
+.repo.python {
+  border-top: 10px solid #6AAD2D;
 }
